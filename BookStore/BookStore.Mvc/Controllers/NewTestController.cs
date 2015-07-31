@@ -11,9 +11,9 @@ namespace BookStore.Mvc.Controllers
     {
         //
         // GET: /NewTest/
-        public ActionResult Index()
+        public ActionResult Index1()
         {
-            return View("~/Views/Test/Index1.cshtml", new BookViewModel());
+            return View(new BookViewModel());
         }
 	}
 }

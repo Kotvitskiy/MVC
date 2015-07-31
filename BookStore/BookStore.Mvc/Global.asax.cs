@@ -1,4 +1,5 @@
-﻿using BookStore.Mvc.Components.AutoMapper;
+﻿using BookStore.Core.CustomViewEngineLocation;
+using BookStore.Mvc.Components.AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace BookStore.Mvc
     {
         protected void Application_Start()
         {
+            ViewEngines.Engines.Clear();
+
+            ViewEngines.Engines.Add(new RazorViewEngine { ViewLocationFormats = new string[] { "~/Views/Test/{0}.cshtml" } });
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AutoMapperWebConfiguration.Configure();

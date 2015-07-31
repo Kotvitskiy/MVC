@@ -41,7 +41,7 @@ namespace BookStore.Mvc
             routes.MapRoute(
                 name: "Test1",
                 url: "Test1",
-                defaults: new { controller = "NewTest", action = "Index" }
+                defaults: new { controller = "NewTest", action = "Index1" }
             );
 
             routes.MapRoute(

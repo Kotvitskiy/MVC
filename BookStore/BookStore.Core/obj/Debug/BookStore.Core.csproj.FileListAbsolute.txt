@@ -3,3 +3,7 @@ C:\Users\Alex\documents\visual studio 2013\Projects\BookStore\BookStore.Core\bin
 C:\Users\Alex\documents\visual studio 2013\Projects\BookStore\BookStore.Core\obj\Debug\BookStore.Core.dll
 C:\Users\Alex\documents\visual studio 2013\Projects\BookStore\BookStore.Core\obj\Debug\BookStore.Core.pdb
 C:\Users\Alex\documents\visual studio 2013\Projects\BookStore\BookStore.Core\obj\Debug\BookStore.Core.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\bin\Debug\BookStore.Core.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\bin\Debug\BookStore.Core.pdb
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\obj\Debug\BookStore.Core.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\obj\Debug\BookStore.Core.pdb
