@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<input id ="searchValue" type="text"/>
+
+<button id="submit" onclick="search()">Find</button>
+
+<div id="resultBox">
+
+</div>
+
+
+
+<script>
+    function data()
+    {
+        $.ajax({
+            type: "POST",
+            url: "[Route:Data]",
+            data: { name: "alex", age: "33" },
+            success: onSuccess
+        });
+    }
+
+    function onSuccess(info)
+    {
+        $("#resultBox").html("");
+        for(var i = 0; i < info.length; i++)
+        {
+            $("#resultBox").append("<span>" + info[i].Name + "</span><br/>");
+            $("#resultBox").append("<span>" + info[i].PublishingHouse + "</span><br/>");
+        }
+    }
+
+    function search()
+    {
+        $.ajax({
+            type: "POST",
+            url: "[Route:Search]",
+            data: { searchString: $("#searchValue").val()},
+            success: onSuccess
+        });
+    }
+
+</script>
+

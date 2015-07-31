@@ -1,0 +1,25 @@
+﻿@model BookStore.Mvc.Models.BookViewModel
+
+@{
+    ViewBag.Title = "Index1";
+    @Styles.Render("~/Content/Styles/Test.css")
+}
+
+<h2>Index1</h2>
+
+<div>
+    <h4>BookViewModel</h4>
+	<hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+
+<p>
+    @Html.LabelFor(model => model.IsNew)
+    @Html.EditorFor(model => model.IsNew, "SwitchButton")
+
+    <br />
+
+    @Html.LabelFor(model => model.IsAvailable)
+    @Html.EditorFor(model => model.IsAvailable)
+</p>

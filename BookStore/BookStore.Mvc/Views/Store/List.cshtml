@@ -1,0 +1,10 @@
+﻿@model List<BookStore.Mvc.Models.BookItemViewModel>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div id="contentBox">
+    @{Html.RenderPartial("BookPartial", Model);}
+</div>
+
