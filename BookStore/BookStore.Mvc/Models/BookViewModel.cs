@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BookStore.Mvc.Models
+namespace Store.Mvc.Models
 {
     [MetadataType(typeof(BookViewModelAttributes))]
     public class BookViewModel

@@ -1,4 +1,4 @@
-﻿using BookStore.Core.RouteHandlers;
+﻿using Store.Core.RouteHandlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BookStore.Core.HttpHandlers
+namespace Store.Core.HttpHandlers
 {
     public class CustomHttpHandler : IHttpHandler
     {

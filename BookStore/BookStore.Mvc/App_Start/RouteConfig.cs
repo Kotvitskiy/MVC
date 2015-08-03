@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using BookStore.Core.RouteHandlers;
+using Store.Core.RouteHandlers;
 
-namespace BookStore.Mvc
+namespace Store.Mvc
 {
     public class RouteConfig
     {
@@ -47,25 +47,25 @@ namespace BookStore.Mvc
             routes.MapRoute(
                name: "Store",
                url: "Store",
-               defaults: new { controller = "Store", action = "List" }
+               defaults: new { controller = "Book", action = "List" }
            );
 
             routes.MapRoute(
                name: "CreateXml",
                url: "CreateXml",
-               defaults: new { controller = "Store", action = "CreateXml" }
+               defaults: new { controller = "Book", action = "CreateXml" }
            );
 
             routes.MapRoute(
                name: "InitLucene",
                url: "InitLucene",
-               defaults: new { controller = "Store", action = "InitLucene" }
+               defaults: new { controller = "Book", action = "InitLucene" }
            );
 
             routes.MapRoute(
                name: "Search",
                url: "Search",
-               defaults: new { controller = "Store", action = "Search" }
+               defaults: new { controller = "Book", action = "Search" }
            );
         }
     }

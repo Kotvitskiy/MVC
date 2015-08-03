@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
-using BookStore.Core.HttpHandlers;
+using Store.Core.HttpHandlers;
 
-namespace BookStore.Core.RouteHandlers
+namespace Store.Core.RouteHandlers
 {
     public class CustomRouteHandler : IRouteHandler
     {

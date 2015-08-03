@@ -76,3 +76,10 @@ C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\bin\System.Web.Mvc.xml
 C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\obj\Debug\BookStore.Mvc.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\obj\Debug\BookStore.Mvc.dll
 C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\obj\Debug\BookStore.Mvc.pdb
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\bin\Ninject.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\bin\Ninject.Web.Common.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\bin\Ninject.Web.Mvc.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\bin\WebActivatorEx.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\bin\Ninject.xml
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\bin\Ninject.Web.Common.xml
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Mvc\bin\Ninject.Web.Mvc.xml

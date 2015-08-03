@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace BookStore.Core.CustomViewEngineLocation
+namespace Store.Core.CustomViewEngineLocation
 {
     public class CustomViewLocationRazorViewEngine : RazorViewEngine
     {

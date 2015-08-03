@@ -7,7 +7,7 @@
     <ProjectGuid>{9985ED24-CF16-4E38-9A8C-B90A98D5967C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BookStore.Core</RootNamespace>
+    <RootNamespace>Store.Core</RootNamespace>
     <AssemblyName>BookStore.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -34,6 +34,7 @@
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -45,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControllerFactories\CustomControllerFactory.cs" />
+    <Compile Include="CustomControllerFactories\ISwitchController.cs" />
     <Compile Include="CustomViewEngineLocation\CustomViewLocationRazorViewEngine.cs" />
     <Compile Include="HttpHandlers\CustomHttpHandler.cs" />
     <Compile Include="RouteHandlers\CustomRouteHandler.cs" />

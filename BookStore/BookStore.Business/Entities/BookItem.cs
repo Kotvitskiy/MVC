@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore.Business.Entities
+namespace Store.Business.Entities
 {
-    public class BookItem
+    public class BookItem : BaseEntity
     {
-        public string Name { get; set; }
-
         public string PublishingHouse { get; set; }
     }
 }

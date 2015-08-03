@@ -16,3 +16,5 @@ C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\Lucene.Net
 C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\obj\Debug\BookStore.Business.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\obj\Debug\BookStore.Business.dll
 C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\obj\Debug\BookStore.Business.pdb
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\Ninject.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\Ninject.xml

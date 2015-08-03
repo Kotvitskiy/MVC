@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BookStore.Mvc.Helper
+namespace Store.Mvc.Helper
 {
     public static class ViewHelper
     {

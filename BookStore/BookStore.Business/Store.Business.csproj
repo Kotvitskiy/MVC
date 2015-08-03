@@ -7,7 +7,7 @@
     <ProjectGuid>{DD1AC6FC-3B12-49C9-97A0-112587222705}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BookStore.Business</RootNamespace>
+    <RootNamespace>Store.Business</RootNamespace>
     <AssemblyName>BookStore.Business</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -51,13 +51,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\Lucene\LuceneService.cs" />
-    <Compile Include="Components\XmlReader\XmlReader.cs" />
+    <Compile Include="Components\XmlServices\XmlService.cs" />
     <Compile Include="Entities\Book.cs" />
     <Compile Include="Entities\BookItem.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\MovieItem.cs" />
+    <Compile Include="Entities\ScreenResolution.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\BookXmlRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\MovieXmlRepository.cs" />
+    <Compile Include="Search\ISearchService.cs" />
+    <Compile Include="Search\LuceneSearch\LuceneBookSearcher.cs" />
+    <Compile Include="Search\LuceneSearch\LuceneMovieSearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Core\Store.Core.csproj">
+      <Project>{9985ed24-cf16-4e38-9a8c-b90a98d5967c}</Project>
+      <Name>Store.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BookStore.Mvc.Models;
+using Store.Mvc.Models;
+using Store.Core.CustomControllerFactories;
 
-namespace BookStore.Mvc.Controllers
+namespace Store.Mvc.Controllers
 {
-    public class NewTestController : Controller
+    public class NewTestController : Controller, ITestSwitcher
     {
-        //
-        // GET: /NewTest/
-        public ActionResult Index1()
+        public ActionResult Index()
         {
-            return View(new BookViewModel());
+            return View(new BookItemViewModel() { Name = "NewTest" });
         }
 	}
 }

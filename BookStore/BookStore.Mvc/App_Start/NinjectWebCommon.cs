@@ -1,7 +1,7 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(BookStore.Mvc.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(BookStore.Mvc.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Store.Mvc.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Store.Mvc.App_Start.NinjectWebCommon), "Stop")]
 
-namespace BookStore.Mvc.App_Start
+namespace Store.Mvc.App_Start
 {
     using System;
     using System.Web;
@@ -10,14 +10,19 @@ namespace BookStore.Mvc.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Store.Mvc.Models;
+    using System.Web.Mvc;
+    using Store.Mvc.Controllers;
+    using Store.Core.CustomControllerFactories;
+    using Store.Business.Repository;
+    using Store.Business.Entities;
+    using Store.Business.Search.LuceneSearch;
+    using Store.Business.Search;
 
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
-        /// <summary>
-        /// Starts the application
-        /// </summary>
         public static void Start() 
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
@@ -25,18 +30,11 @@ namespace BookStore.Mvc.App_Start
             bootstrapper.Initialize(CreateKernel);
         }
         
-        /// <summary>
-        /// Stops the application.
-        /// </summary>
         public static void Stop()
         {
             bootstrapper.ShutDown();
         }
         
-        /// <summary>
-        /// Creates the kernel that will manage your application.
-        /// </summary>
-        /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
@@ -55,12 +53,13 @@ namespace BookStore.Mvc.App_Start
             }
         }
 
-        /// <summary>
-        /// Load your modules or register your services here!
-        /// </summary>
-        /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ITestSwitcher>().To<TestController>();
+
+            kernel.Bind<ISearchService<BookItem>>().To<LuceneBookSearcher>();
+
+            kernel.Bind<IRepository<BookItem>>().To<BookXmlRepository>();
         }        
     }
 }

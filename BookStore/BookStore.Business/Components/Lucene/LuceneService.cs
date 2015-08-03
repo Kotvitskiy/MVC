@@ -1,22 +1,16 @@
 ﻿using Lucene.Net.Analysis;
 using Lucene.Net.Index;
 using Lucene.Net.Store;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Http;
-using BookStore.Business.Entities;
+using Store.Business.Entities;
 using Lucene.Net.Documents;
 using Lucene.Net.Search;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Analysis.Standard;
 
-
-namespace BookStore.Business.Components.Lucene
+namespace Store.Business.Components.Lucene
 {
     public class LuceneService
     {
@@ -30,9 +24,9 @@ namespace BookStore.Business.Components.Lucene
 
         private IndexReader reader;
 
-        public LuceneService(string indexPath)
+        public LuceneService()
         {
-            this.indexPath = indexPath;
+            this.indexPath = HttpContext.Current.Server.MapPath("~/App_Data/LuceneIndex");
             InitialiseLucene();
         }
 
@@ -49,7 +43,6 @@ namespace BookStore.Business.Components.Lucene
                 writer.Dispose();
                 writer = new IndexWriter(luceneIndexDirectory, analyzer, IndexWriter.MaxFieldLength.UNLIMITED);
             }
-
         }
 
         public void BuildIndex(IEnumerable<BookItem> items)

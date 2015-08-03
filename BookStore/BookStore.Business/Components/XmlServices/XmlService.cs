@@ -1,4 +1,4 @@
-﻿using BookStore.Business.Entities;
+﻿using Store.Business.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace BookStore.Business.Components.XmlReader
+namespace Store.Business.Components.XmlServices
 {
-    public class XmlReader
+    public class XMLService
     {
         string XmlPath;
 
-        public XmlReader(string path)
+        public XMLService(string path)
         {
             XmlPath = path;
         }
@@ -35,6 +35,24 @@ namespace BookStore.Business.Components.XmlReader
             }
 
             return results.OrderByDescending(x => x.Name).ToList();
+        }
+
+        public void MapObjectToXml()
+        {
+            var doc = new XDocument();
+
+            var root = new XElement("Books");
+
+            doc.Add(root);
+
+            for (int i = 0; i < 10000; i++)
+            {
+                root.Add(new XElement("book",
+                    new XAttribute("name", "Book" + i),
+                    new XAttribute("PublishingHouse", "Publishing" + i)));
+            }
+
+            doc.Save(XmlPath);
         }
     }
 }

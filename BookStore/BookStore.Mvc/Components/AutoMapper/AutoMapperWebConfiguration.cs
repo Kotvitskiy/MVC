@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using BookStore.Business.Entities;
-using BookStore.Mvc.Models;
+using Store.Business.Entities;
+using Store.Mvc.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BookStore.Mvc.Components.AutoMapper
+namespace Store.Mvc.Components.AutoMapper
 {
     public class AutoMapperWebConfiguration
     {
