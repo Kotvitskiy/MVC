@@ -1,14 +1,4 @@
-﻿document.onkeyup = function (e) {
-    e = e || window.event;
-    if (e.keyCode === 13) {
-        if ($("searchValue").val() != "") {
-            search();
-        }
-    }
-    return false;
-}
-
-function search() {
+﻿function search() {
     $.ajax({
         type: "POST",
         url: "[Route:Search]",
@@ -21,4 +11,14 @@ function search() {
 function onSearchSuccess(info) {
     $("#contentBox").html("");
     $("#contentBox").append(info);
+}
+
+function searchMovie()
+{
+    $.ajax({
+        type: "POST",
+        url: "[Route:SearchMovie]",
+        data: { searchString: $("#searchValue").val() },
+        success: onSearchSuccess
+    });
 }

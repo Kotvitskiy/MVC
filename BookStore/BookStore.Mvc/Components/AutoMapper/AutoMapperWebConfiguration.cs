@@ -18,6 +18,8 @@ namespace Store.Mvc.Components.AutoMapper
         private static void ConfigureBookMapping()
         {
             Mapper.CreateMap<BookItem, BookItemViewModel>();
+
+            Mapper.CreateMap<MovieItem, MovieItemViewModel>();
         } 
     }
 }

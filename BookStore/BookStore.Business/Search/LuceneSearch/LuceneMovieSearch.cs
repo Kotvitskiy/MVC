@@ -13,11 +13,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using Store.Business.Extensions;
-using System.Linq;
 
 namespace Store.Business.Search.LuceneSearch
 {
-    public class LuceneMovieSearcher
+    public class LuceneMovieSearcher : ISearchService<MovieItem>
     {
         private Analyzer analyzer;
 

@@ -172,6 +172,7 @@
     <Compile Include="Components\AutoMapper\AutoMapperWebConfiguration.cs" />
     <Compile Include="Controllers\CustomerTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\NewTestController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -193,6 +194,9 @@
     <Content Include="Views\Book\List.cshtml" />
     <Content Include="Views\Book\Search.cshtml" />
     <Content Include="Views\Book\BookPartial.cshtml" />
+    <Content Include="Views\Movie\MoviePartial.cshtml" />
+    <Content Include="Views\Movie\List.cshtml" />
+    <Content Include="Views\Movie\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

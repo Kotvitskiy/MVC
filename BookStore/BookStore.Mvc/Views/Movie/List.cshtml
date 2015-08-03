@@ -1,11 +1,8 @@
-﻿@model List<Store.Mvc.Models.BookItemViewModel>
+﻿@model List<Store.Mvc.Models.MovieItemViewModel>
 
-@{
-    ViewBag.Title = "List";
-}
 
 <div id="contentBox">
-    @{Html.RenderPartial("BookPartial", Model);}
+    @{Html.RenderPartial("MoviePartial", Model);}
 </div>
 
 <script src="~/Scripts/Store.js"></script>
@@ -14,9 +11,10 @@
         e = e || window.event;
         if (e.keyCode === 13) {
             if ($("searchValue").val() != "") {
-                search();
+                searchMovie();
             }
         }
         return false;
     }
 </script>
+

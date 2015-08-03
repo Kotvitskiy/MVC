@@ -50,6 +50,7 @@ namespace Store.Mvc
                defaults: new { controller = "Book", action = "List" }
            );
 
+            #region book
             routes.MapRoute(
                name: "CreateXml",
                url: "CreateXml",
@@ -67,6 +68,32 @@ namespace Store.Mvc
                url: "Search",
                defaults: new { controller = "Book", action = "Search" }
            );
+            #endregion
+
+            #region movie
+            routes.MapRoute(
+                name: "MovieStore",
+                url: "MovieStore",
+                defaults: new {controller = "Movie", action = "List" });
+
+            routes.MapRoute(
+              name: "CreateMovieXml",
+              url: "CreateMovieXml",
+              defaults: new { controller = "Movie", action = "CreateXml" }
+          );
+
+            routes.MapRoute(
+               name: "InitMovieLucene",
+               url: "InitMovieLucene",
+               defaults: new { controller = "Movie", action = "InitLucene" }
+           );
+
+            routes.MapRoute(
+               name: "SearchMovie",
+               url: "SearchMovie",
+               defaults: new { controller = "Movie", action = "Search" }
+           );
+            #endregion
         }
     }
 }

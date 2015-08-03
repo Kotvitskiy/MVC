@@ -57,9 +57,19 @@ namespace Store.Mvc.App_Start
         {
             kernel.Bind<ITestSwitcher>().To<TestController>();
 
+            #region book
             kernel.Bind<ISearchService<BookItem>>().To<LuceneBookSearcher>();
 
             kernel.Bind<IRepository<BookItem>>().To<BookXmlRepository>();
+            #endregion
+
+            #region movie
+
+            kernel.Bind<ISearchService<MovieItem>>().To<LuceneMovieSearcher>();
+
+            kernel.Bind<IRepository<MovieItem>>().To<MovieXmlRepository>();
+
+            #endregion
         }        
     }
 }
