@@ -1,0 +1,13 @@
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\obj\Debug\BookStore.Business.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\obj\Debug\BookStore.Business.pdb
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\BookStore.Business.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\BookStore.Business.pdb
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\Lucene.Net.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\Ninject.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\Lucene.Net.pdb
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\Lucene.Net.xml
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\Ninject.xml
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\BookStore.Core.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\bin\Debug\BookStore.Core.pdb
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Business\obj\Debug\Store.Business.csprojResolveAssemblyReference.cache

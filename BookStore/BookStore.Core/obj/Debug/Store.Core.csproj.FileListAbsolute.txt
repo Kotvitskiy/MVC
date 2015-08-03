@@ -1,0 +1,6 @@
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\bin\Debug\BookStore.Core.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\bin\Debug\BookStore.Core.pdb
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\bin\Debug\Ninject.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\bin\Debug\Ninject.xml
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\obj\Debug\BookStore.Core.dll
+C:\Users\Alex\Source\Repos\MVC\BookStore\BookStore.Core\obj\Debug\BookStore.Core.pdb
