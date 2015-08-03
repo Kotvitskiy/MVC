@@ -10,10 +10,12 @@ using Store.Mvc.Models;
 using Store.Business.Extensions;
 using AutoMapper;
 using Store.Mvc.Helper;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Store.Mvc.Controllers
 {
-    public class MovieController : Controller
+    public class MovieController : AsyncController
     {
         ISearchService<MovieItem> searcher;
 
@@ -26,10 +28,24 @@ namespace Store.Mvc.Controllers
             this.repository = repository;
         }
 
+        public async void InitLuceneAsync()
+        {
+            AsyncManager.OutstandingOperations.Increment();
+            var movies = await Task.Factory.StartNew(() => repository.GetAll());
+            //var movies = repository.GetAll();
+            searcher.BuildIndex(movies);
+            AsyncManager.OutstandingOperations.Decrement();
+        }
+
+        public string InitLuceneCompleted()
+        {
+            return "Indexing Done";
+        }
+
         public ActionResult List()
         {
             var modelList = new List<MovieItemViewModel>();
-            modelList.Add(new MovieItemViewModel { Name = "33", Duration = "1.33".ToTimeSpan(), DisplayResolution = "330x440".ToDisplayResolution() });
+            modelList.Add(new MovieItemViewModel { Name = "33", Duration = "1:33".ToTimeSpan(), DisplayResolution = "330x440".ToDisplayResolution() });
             return View(modelList);
         }
 
@@ -38,9 +54,9 @@ namespace Store.Mvc.Controllers
 
             var list = new List<MovieItem>();
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 100000; i++)
             {
-                list.Add(new MovieItem { Name = "Movie" + i, Duration = ("1.33"+i).ToTimeSpan(),
+                list.Add(new MovieItem { Name = "Movie" + i, Duration = ("1:33").ToTimeSpan(),
                     DisplayResolution = ("330"+i+"x"+440+i).ToDisplayResolution()});
             }
 
@@ -49,23 +65,30 @@ namespace Store.Mvc.Controllers
             return RedirectToRoute("Store");
         }
 
-        public string InitLucene()
+        [HttpPost]
+        public void SearchAsync(string searchString)
         {
-            var movies = repository.GetAll();
-
-            searcher.BuildIndex(movies);
-
-            return "Indexing Done";
+            AsyncManager.OutstandingOperations.Increment();
+            var result = searcher.Search(searchString);
+            var viewResult = Mapper.Map<IList<MovieItem>, IList<MovieItemViewModel>>((List<MovieItem>)result);
+            AsyncManager.Parameters["headlines"] = viewResult;
+            AsyncManager.OutstandingOperations.Decrement();
         }
 
         [HttpPost]
-        public ActionResult Search(string searchString)
+        public ActionResult SearchCompleted(IList<MovieItemViewModel> viewResult)
         {
-            var result = searcher.Search(searchString);
-
-            var viewResult = Mapper.Map<IList<BookItem>, IList<BookItemViewModel>>((List<BookItem>)result);
-
             return Json(ViewHelper.RenderRazorViewToString(this.ControllerContext, "~/Views/Movie/MoviePartial.cshtml", viewResult));
         }
+
+        //[HttpPost]
+        //public ActionResult Search(string searchString)
+        //{
+        //    var result = searcher.Search(searchString);
+
+        //    var viewResult = Mapper.Map<IList<MovieItem>, IList<MovieItemViewModel>>((List<MovieItem>)result);
+
+        //    return Json(ViewHelper.RenderRazorViewToString(this.ControllerContext, "~/Views/Movie/MoviePartial.cshtml", viewResult));
+        //}
 	}
 }

@@ -30,7 +30,8 @@ namespace Store.Business.Search.LuceneSearch
 
         private void InitialiseLucene()
         {
-            analyzer = new StandardAnalyzer(global::Lucene.Net.Util.Version.LUCENE_30);
+            //analyzer = new StandardAnalyzer(global::Lucene.Net.Util.Version.LUCENE_30);
+            analyzer = new KeywordAnalyzer();
         }
 
         public void BuildIndex(IEnumerable<MovieItem> items)
@@ -78,11 +79,11 @@ namespace Store.Business.Search.LuceneSearch
                 {
                     using(var searcher = new IndexSearcher(reader))
                     {
-                        var parser = new QueryParser(global::Lucene.Net.Util.Version.LUCENE_30, "Name", analyzer);
+                        var parser = new MultiFieldQueryParser(global::Lucene.Net.Util.Version.LUCENE_30, new string[] {"Name", "Duration"}, analyzer);
 
                         var collector = TopScoreDocCollector.Create(hitsPerPage, true);
 
-                        var query = parser.Parse(searchTerm);
+                        var query = parser.Parse(QueryParser.Escape(searchTerm));
 
                         searcher.Search(query, collector);
 

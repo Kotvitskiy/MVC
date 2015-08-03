@@ -12,7 +12,7 @@ namespace Store.Business.Extensions
     {
         public static TimeSpan ToTimeSpan(this string s)
         {
-              Regex myTimePattern = new Regex( @"^(\d+)(\.(\d+))?$") ;
+              Regex myTimePattern = new Regex(@"^(\d+)(\:(\d+))+?$");
               if ( s == null ) throw new ArgumentNullException("s") ;
               Match m = myTimePattern.Match(s) ;
               if ( ! m.Success ) throw new ArgumentOutOfRangeException("s") ;
